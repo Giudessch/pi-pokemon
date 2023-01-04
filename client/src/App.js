@@ -1,25 +1,28 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
-import HomePage from './pages/HomaPage';
+import Pokemons from './pages/Pokemons';
 import LandingPage from './pages/LandingPage';
+import CreatePokemonPage from './pages/CreatePokemonPage';
+import Details from './pages/Details';
 
 
 function App() {
   return (
     <div className='app'>
       <Router>
-        <ul>
+        {/* <ul>
           <li>
             <Link to="/home">Home</Link>
           </li>
-        </ul>
+          <li>
+            <Link to="/create">Create</Link>
+          </li>
+        </ul> */}
         <Switch>
-          <Route path="/home">
-            <HomePage />
-          </Route>
-          <Route path="/">
-            <LandingPage />
-          </Route>
+          <Route path="/"> <LandingPage /> </Route>
+          <Route path="/home"> < Pokemons /> </Route>
+          <Route path="/create"> <CreatePokemonPage /> </Route>
+          <Route path="/pokemons/:id"> <Details /> </Route>
         </Switch>
       </Router>
     </div>
